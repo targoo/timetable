@@ -20,34 +20,25 @@
 			maxTime:18,
 			slotMinutes: 30,
 			selectHelper: true,
-			resources: [
-				{
-					name: 'Resource 2',
-					id:	'resource2'
-				},
-				{
-					name: 'Resource 1',
-					id:	'resource1'
-				}
-			],
 			events: [
 				{
 					title: 'Lunch',
 					start: 630,
 					end: 720,
 					allDay: false,
-					resource: 'resource1'
+					resource: '2'
 				},
 			],
 			select: function(start, end, allDay, jsEvent, view, resource) {
+
 				var title = prompt('event title:');
 
 				if (title) {
 					calendar.timetable('renderEvent',
 						{
 							title: title,
-							start: start,
-							end: end,
+							start: 630,
+							end: 720,
 							allDay: allDay,
 							resource: resource.id
 						},

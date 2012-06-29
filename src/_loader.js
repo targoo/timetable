@@ -31,14 +31,14 @@ if (!legacy) {
 
 js('defaults.js');
 js('main.js');
-js('Calendar.js');
+js('Timetable.js');
 js('EventManager.js');
 js('date_util.js');
 js('util.js');
 
-js('resource/ResourceDayView.js');
-js('resource/ResourceView.js');
-js('resource/ResourceEventRenderer.js');
+js('timetable/TimetableDayView.js');
+js('timetable/TimetableView.js');
+js('timetable/TimetableEventRenderer.js');
 
 js('common/View.js');
 js('common/DayEventRenderer.js');
@@ -49,7 +49,6 @@ js('common/HoverListener.js');
 js('common/HorizontalPositionCache.js');
 
 endload();
-
 
 if (debug) {
 	window.onload = function() {

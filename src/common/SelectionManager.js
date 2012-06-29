@@ -71,7 +71,7 @@ function SelectionManager() {
 		var hoverListener = t.getHoverListener();
 		var reportDayClick = t.reportDayClick; // this is hacky and sort of weird
 		var row;
-		var resources = opt('resources');
+		var days = opt('days');
 		var viewName = getViewName();
 		if (ev.which == 1 && opt('selectable')) { // which==1 means left mouse button
 			unselect(ev);
@@ -93,7 +93,7 @@ function SelectionManager() {
 					if (+dates[0] == +dates[1]) {
 						reportDayClick(dates[0],(viewName == 'resourceDay' ? false : true), ev);
 					}
-					reportSelection(dates[0], (viewName == 'resourceDay' ? addMinutes(dates[1], opt('slotMinutes')) : dates[1]), (viewName == 'resourceDay' ? false : true), ev, resources[row]);
+					reportSelection(dates[0], (viewName == 'resourceDay' ? addMinutes(dates[1], opt('slotMinutes')) : dates[1]), (viewName == 'resourceDay' ? false : true), ev, days[row]);
 				}
 			});
 		}

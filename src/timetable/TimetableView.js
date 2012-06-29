@@ -31,7 +31,7 @@ function ResourceView(element, calendar, viewName) {
 	t.allDayBounds = allDayBounds;
 	t.getRowCnt = function() { return rowCnt };
 	t.getColCnt = function() { return colCnt };
-	t.getResources = function() { return opt('resources') };
+	t.getResources = function() { return opt('days') };
 	t.getColWidth = function() { return colWidth };
 	t.getViewName = function() { return viewName };
 	t.getDaySegmentContainer = function() { return daySegmentContainer };
@@ -66,7 +66,7 @@ function ResourceView(element, calendar, viewName) {
 	var viewHeight;
 	var colWidth;
 	
-	var rowCnt, colCnt, resources;
+	var rowCnt, colCnt, days;
 	var coordinateGrid;
 	var hoverListener;
 	var colContentPositions;
@@ -115,7 +115,7 @@ function ResourceView(element, calendar, viewName) {
 		var contentClass = tm + "-widget-content";
 		var i, j, id, resourceName;
 		var table;
-		var resources = opt('resources');
+		var days = opt('days');
 		s =
 			"<table class='fc-border-separate' style='width:100%' cellspacing='0'>" +
 			"<thead>" +
@@ -129,8 +129,8 @@ function ResourceView(element, calendar, viewName) {
 			"</thead>" +
 			"<tbody>";
 		for (i=0; i<maxRowCnt; i++) {
-			id = resources[i]['id'];
-			resourceName = resources[i]['name'];
+			id = days[i]['id'];
+			resourceName = days[i]['name'];
 			s +=
 				"<tr class='fc-week" + id + "'><td class='fc-resourceName'>" + resourceName + "</td>";
 			for (j=0; j<colCnt; j++) {

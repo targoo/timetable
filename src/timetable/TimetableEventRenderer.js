@@ -61,7 +61,7 @@ function ResourceEventRenderer() {
 	function compileSegs(events) {
 		var rowCnt = getRowCnt(),
 			colCnt = getColCnt(),
-			resources = getResources(),
+			days = getResources(),
 			d1 = cloneDate(t.visStart),
 			d2 = addDays(cloneDate(d1), colCnt),
 			visEventsEnds = $.map(events, exclEndDay),
@@ -79,7 +79,7 @@ function ResourceEventRenderer() {
 		}
 
 		for (i=0; i<rowCnt; i++) {
-			currentResource = resources[i].id;
+			currentResource = days[i].id;
 			row = stackSegs(sliceSegs(events, visEventsEnds, d1, d2));
 
 			for (j=0; j<row.length; j++) {
@@ -117,7 +117,7 @@ function ResourceEventRenderer() {
 	
 	function draggableResourceEvent(event, eventElement) {
 		var hoverListener = getHoverListener();
-		var dayDelta, minuteDelta, resourceDelta, newResourceId, resources, viewName = getViewName();
+		var dayDelta, minuteDelta, resourceDelta, newResourceId, days, viewName = getViewName();
 		eventElement.draggable({
 			zIndex: 9,
 			delay: 50,
@@ -132,8 +132,8 @@ function ResourceEventRenderer() {
 					if (cell) {
 						//setOverflowHidden(true);
 						resourceDelta = rowDelta * (opt('isRTL') ? -1 : 1);
-						resources = opt('resources');
-						newResourceId = resources[cell.row].id; 
+						days = opt('days');
+						newResourceId = days[cell.row].id; 
 						
 						if (viewName == 'resourceDay') {
 							minuteDelta = colDelta * (opt('isRTL') ? -1 : 1) * opt('slotMinutes');
