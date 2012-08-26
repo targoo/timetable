@@ -1,10 +1,7 @@
-
 var fc = $.timetable = { version: "@VERSION" };
 var fcViews = fc.views = {};
 
-
 $.fn.timetable = function(options) {
-
 
 	// method calling
 	if (typeof options == 'string') {
@@ -43,7 +40,6 @@ $.fn.timetable = function(options) {
 		options
 	);
 	
-	
 	this.each(function(i, _element) {
 		var element = $(_element);
 		var calendar = new Calendar(element, options, eventSources);
@@ -61,5 +57,3 @@ $.fn.timetable = function(options) {
 function setDefaults(d) {
 	$.extend(true, defaults, d);
 }
-
-

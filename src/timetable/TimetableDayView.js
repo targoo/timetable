@@ -19,11 +19,7 @@ function ResourceDayView(element, calendar) {
 		var end = addMinutes(cloneDate(start), (opt('maxTime')-opt('minTime'))*60);
 		var visStart = cloneDate(start);
 		var visEnd = cloneDate(end);
-		t.title = formatDates(
-			visStart,
-			addDays(cloneDate(visEnd), -1),
-			opt('titleFormat')
-		);
+		t.title = ''
 		t.start = start;
 		t.end = end;
 		t.visStart = visStart;

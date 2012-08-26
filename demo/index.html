@@ -1,7 +1,36 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
 <head>
-<script type='text/javascript' src='../src/_loader.js'></script>
+
+<link rel=stylesheet href="../src/common/common.css" TYPE="text/css">
+
+<script type='text/javascript' src='../lib/jquery-1.5.2.min.js'></script>
+<script type='text/javascript' src='../lib/jquery-ui-1.8.11.custom.min.js'></script>
+
+<!-- 
+<script type='text/javascript' src='../src/defaults.js'></script>
+<script type='text/javascript' src='../src/main.js'></script>
+<script type='text/javascript' src='../src/Timetable.js'></script>
+<script type='text/javascript' src='../src/EventManager.js'></script>
+<script type='text/javascript' src='../src/date_util.js'></script>
+<script type='text/javascript' src='../src/util.js'></script>
+
+<script type='text/javascript' src='../src/timetable/TimetableDayView.js'></script>
+<script type='text/javascript' src='../src/timetable/TimetableView.js'></script>
+<script type='text/javascript' src='../src/timetable/TimetableEventRenderer.js'></script>
+
+<script type='text/javascript' src='../src/common/View.js'></script>
+<script type='text/javascript' src='../src/common/DayEventRenderer.js'></script>
+
+<script type='text/javascript' src='../src/common/SelectionManager.js'></script>
+<script type='text/javascript' src='../src/common/OverlayManager.js'></script>
+<script type='text/javascript' src='../src/common/CoordinateGrid.js'></script>
+<script type='text/javascript' src='../src/common/HoverListener.js'></script>
+<script type='text/javascript' src='../src/common/HorizontalPositionCache.js'></script>
+ -->
+ 
+<script type='text/javascript' src='../jquery.timetable.min.js'></script>
+
 <script type='text/javascript'>
 
 	$(document).ready(function() {
@@ -17,7 +46,7 @@
 			editable: true,
 			selectable: true,
 			minTime: 8,
-			maxTime:18,
+			maxTime:19,
 			slotMinutes: 30,
 			selectHelper: true,
 			events: [
@@ -27,6 +56,13 @@
 					end: 720,
 					allDay: false,
 					resource: '2'
+				},
+				{
+					title: 'Meeting',
+					start: 830,
+					end: 1000,
+					allDay: false,
+					resource: '4'
 				},
 			],
 			select: function(start, end, allDay, jsEvent, view, resource) {

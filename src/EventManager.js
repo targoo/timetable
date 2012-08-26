@@ -1,4 +1,3 @@
-
 fc.sourceNormalizers = [];
 fc.sourceFetchers = [];
 
@@ -9,10 +8,8 @@ var ajaxDefaults = {
 
 var eventGUID = 1;
 
-
 function EventManager(options, _sources) {
 	var t = this;
-	
 	
 	// exports
 	t.isFetchNeeded = isFetchNeeded;
@@ -159,8 +156,6 @@ function EventManager(options, _sources) {
 	
 	/* Sources
 	-----------------------------------------------------------------------------*/
-	
-
 	function addEventSource(source) {
 		source = _addEventSource(source);
 		if (source) {
@@ -200,8 +195,6 @@ function EventManager(options, _sources) {
 	
 	/* Manipulation
 	-----------------------------------------------------------------------------*/
-	
-	
 	function updateEvent(event) { // update an existing event
 		var i, len = cache.length, e,
 			defaultEventEnd = getView().defaultEventEnd, // getView???
@@ -297,8 +290,6 @@ function EventManager(options, _sources) {
 	
 	/* Loading State
 	-----------------------------------------------------------------------------*/
-	
-	
 	function pushLoading() {
 		if (!loadingLevel++) {
 			trigger('loading', null, true);
@@ -316,8 +307,6 @@ function EventManager(options, _sources) {
 	
 	/* Event Normalization
 	-----------------------------------------------------------------------------*/
-	
-	
 	function normalizeEvent(event) {
 		
 		start = event.start;

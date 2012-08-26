@@ -1,8 +1,5 @@
-
- 
 function Calendar(element, options, eventSources) {
 	var t = this;
-	
 	
 	// exports
 	t.options = options;
@@ -15,12 +12,6 @@ function Calendar(element, options, eventSources) {
 	t.changeView = changeView;
 	t.select = select;
 	t.unselect = unselect;
-	t.prev = prev;
-	t.next = next;
-	t.prevYear = prevYear;
-	t.nextYear = nextYear;
-	t.today = today;
-	t.gotoDate = gotoDate;
 	t.incrementDate = incrementDate;
 	t.formatDate = function(format, date) { return formatDate(format, date, options) };
 	t.formatDates = function(format, date1, date2) { return formatDates(format, date1, date2, options) };
@@ -28,7 +19,6 @@ function Calendar(element, options, eventSources) {
 	t.getView = getView;
 	t.option = option;
 	t.trigger = trigger;
-	
 	
 	// imports
 	EventManager.call(t, options, eventSources);
@@ -57,7 +47,6 @@ function Calendar(element, options, eventSources) {
 	
 	/* Main Rendering
 	-----------------------------------------------------------------------------*/
-	
 	function render(inc) {
 		if (!content) {
 			initialRender();
@@ -352,40 +341,6 @@ function Calendar(element, options, eventSources) {
 	
 	/* Date
 	-----------------------------------------------------------------------------*/
-	
-	
-	function prev() {
-		renderView(-1);
-	}
-	
-	
-	function next() {
-		renderView(1);
-	}
-	
-	
-	function prevYear() {
-		addYears(date, -1);
-		renderView();
-	}
-	
-	
-	function nextYear() {
-		addYears(date, 1);
-		renderView();
-	}
-	
-	
-	function today() {
-		date = new Date();
-		renderView();
-	}
-	
-	
-	function gotoDate(year, month, dateOfMonth) {
-	}
-	
-	
 	function incrementDate(years, months, days) {
 		if (years !== undefined) {
 			addYears(date, years);
@@ -408,8 +363,6 @@ function Calendar(element, options, eventSources) {
 	
 	/* Misc
 	-----------------------------------------------------------------------------*/
-	
-	
 	function getView() {
 		return currentView;
 	}
@@ -434,8 +387,5 @@ function Calendar(element, options, eventSources) {
 			);
 		}
 	}
-	
-	
-	
 
 }
